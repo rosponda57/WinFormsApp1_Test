@@ -38,7 +38,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(598, 269);
+            button1.Location = new Point(142, 183);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             groupBox1.Controls.Add(radioButton2);
             groupBox1.Controls.Add(radioButton1);
-            groupBox1.Location = new Point(501, 114);
+            groupBox1.Location = new Point(45, 28);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(250, 125);
             groupBox1.TabIndex = 1;
@@ -81,7 +81,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(598, 328);
+            button2.Location = new Point(142, 242);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 2;
@@ -93,7 +93,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(388, 366);
             Controls.Add(button2);
             Controls.Add(groupBox1);
             Controls.Add(button1);

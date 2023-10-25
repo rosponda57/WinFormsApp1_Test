@@ -36,11 +36,11 @@ namespace WinFormsApp1
             property.Name = "<dynamicSettingName>";
             property.DefaultValue = "ccc";
             Settings.Default.Properties.Add(property);
-            Settings.Default.Save(); 
-            
+            Settings.Default.Save();
+
             //test gig2
-                
-                
+
+
             var x = Properties.Settings.Default.Properties["<Test>"];
             var xw = Properties.Settings.Default.Properties["<dynamicSettingName>"];
         }

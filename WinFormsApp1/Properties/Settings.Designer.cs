@@ -22,5 +22,17 @@ namespace WinFormsApp1.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("poczatek")]
+        public string SettingUser {
+            get {
+                return ((string)(this["SettingUser"]));
+            }
+            set {
+                this["SettingUser"] = value;
+            }
+        }
     }
 }

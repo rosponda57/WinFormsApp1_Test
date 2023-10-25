@@ -14,7 +14,7 @@ namespace WinFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             clsBase clsBase;
-            //123 456 xxxxxx
+            //123 456 xxxxxx elo
             if (radioButton1.Checked) //db
             {
                 clsBase = new clsDb1();

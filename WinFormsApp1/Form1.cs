@@ -38,7 +38,7 @@ namespace WinFormsApp1
             Settings.Default.Properties.Add(property);
             Settings.Default.Save(); 
             
-            //test gig
+            //test gig2
                 
                 
             var x = Properties.Settings.Default.Properties["<Test>"];

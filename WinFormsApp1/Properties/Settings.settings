@@ -5,5 +5,11 @@
     <Setting Name="SettingUser" Type="System.String" Scope="User">
       <Value Profile="(Default)">poczatek</Value>
     </Setting>
+    <Setting Name="SettingObject" Type="System.String" Scope="User">
+      <Value Profile="(Default)">{}</Value>
+    </Setting>
+    <Setting Name="SettingObjectGlobal" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">{}</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

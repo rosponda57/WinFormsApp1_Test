@@ -2,6 +2,9 @@ using Microsoft.VisualBasic;
 using System;
 using System.Configuration;
 using System.Data.Common;
+using System.Text.Json;
+using System.Windows.Forms;
+using System.Xml.Linq;
 using WinFormsApp1.ClassTest;
 using WinFormsApp1.Properties;
 
@@ -9,15 +12,28 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
+        private static TestAppSettings ustawienia = new();
+        private static TestAppSettings ustawieniaG = new();
+
         public Form1()
         {
             InitializeComponent();
+            if (Settings.Default.SettingObject != "")
+            {
+                ustawienia = JsonSerializer.Deserialize<TestAppSettings>(Settings.Default.SettingObject);
+            }
+            if (Settings.Default.SettingObjectGlobal != "")
+            {
+                ustawieniaG = JsonSerializer.Deserialize<TestAppSettings>(Settings.Default.SettingObjectGlobal);
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             clsBase clsBase;
-            //123 456
+            //123 456  bbbbbbbbbbbbbbbbbbb
             if (radioButton1.Checked) //db
             {
                 clsBase = new clsDb1();
@@ -36,32 +52,14 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //var xw = Properties.Settings.Default.Properties["dynamicSettingName"];
-
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);  // the config that applies to all users
+            AppSettingsSection appSettings = config.AppSettings;
 
             string xw = Properties.Settings.Default.SettingUser;
+            MessageBox.Show($"ustawienie: {xw} \n\n "
+                   + $" dynamioczne user : {Properties.Settings.Default.SettingObject} \n\n"
+                   + $" ustawieniaG: {ConfigurationManager.AppSettings["AAA3"]}");
 
-            var xd = Settings.Default.Properties["dynamicSettingName"];
-
-            MessageBox.Show($"ustawienie: {xw} i dynamioczne: {xd}");
-
-
-            Settings.Default.SettingUser = "koza";
-            Settings.Default.Save();
-
-            var _x = Settings.Default.Properties.Count;
-
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show(xw.DefaultValue.ToString());
-            //}
-            ////test gig2
-            //xw = Properties.Settings.Default.Properties["SettingUser"];
-
-
-            //var x = Properties.Settings.Default.Properties["<Test>"];
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -72,20 +70,39 @@ namespace WinFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //https://stackoverflow.com/questions/32989100/how-to-make-multi-language-app-in-winforms
-            var p = new SettingsProperty("dynamicSettingName");
+            ustawienia.Ustawienie1 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            ustawienia.Etykieta = "Nowe ustawienie";
 
-            p.PropertyType = typeof( string );
-            p.Attributes.Add(typeof(UserScopedSettingAttribute),new UserScopedSettingAttribute());
-            p.Provider = Settings.Default.Providers["LocalFileSettingsProvider"];
-            p.DefaultValue = "xxxxx";
-            p.IsReadOnly = false;
-            p.SerializeAs = SettingsSerializeAs.Xml;
-            //SettingsPropertyValue v = new SettingsPropertyValue( p );
-            Settings.Default.Properties.Add(p);
-            Settings.Default["dynamicSettingName"] = "dynamicSettingName  test";
+            Settings.Default.SettingObject = JsonSerializer.Serialize(ustawienia); ;
+            ustawienia.Etykieta = "Nowe ustawienie Global";
             Settings.Default.Save();
             Settings.Default.Reload();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);  // the config that applies to all users
+            AppSettingsSection appSettings = config.AppSettings;
+
+            if (appSettings.IsReadOnly() == false)
+            {
+                if (ConfigurationManager.AppSettings["AAA3"] == null)
+                {
+                    appSettings.Settings.Add("AAA3", "BBB");
+                }
+                else
+                {
+                    config.AppSettings.Settings.Remove("AAA3");
+                    config.AppSettings.Settings.Add("AAA3", "globalne w oliku");
+                    //ConfigurationManager.AppSettings["AAA3"] = "globalne w oliku";
+                }
+                config.Save();
+                ConfigurationManager.RefreshSection("appSettings");
+            }
+            else
+            {
+                MessageBox.Show("nie wolno zapisywaæ !");
+            }
         }
     }
 }

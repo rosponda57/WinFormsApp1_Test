@@ -34,5 +34,26 @@ namespace WinFormsApp1.Properties {
                 this["SettingUser"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("{}")]
+        public string SettingObject {
+            get {
+                return ((string)(this["SettingObject"]));
+            }
+            set {
+                this["SettingObject"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("{}")]
+        public string SettingObjectGlobal {
+            get {
+                return ((string)(this["SettingObjectGlobal"]));
+            }
+        }
     }
 }

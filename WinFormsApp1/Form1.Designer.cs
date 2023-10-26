@@ -35,11 +35,13 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            button5 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             button1.Location = new Point(142, 183);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
@@ -83,16 +85,18 @@
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button2.Location = new Point(142, 242);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 2;
-            button2.Text = "button2";
+            button2.Text = "Pobierz ustawienia";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button3.Location = new Point(142, 289);
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
@@ -103,19 +107,32 @@
             // 
             // button4
             // 
+            button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button4.Location = new Point(262, 241);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 4;
-            button4.Text = "button4";
+            button4.Text = "ZapiszL";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button5.Location = new Point(262, 276);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 29);
+            button5.TabIndex = 5;
+            button5.Text = "ZapiszG";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(388, 366);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -137,5 +154,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Button button5;
     }
 }

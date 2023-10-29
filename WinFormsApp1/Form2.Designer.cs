@@ -28,19 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            groupBox2 = new GroupBox();
+            rbEn = new RadioButton();
+            rbPL = new RadioButton();
+            btnJezykZmien = new Button();
+            groupBox2.SuspendLayout();
             SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(rbEn);
+            groupBox2.Controls.Add(rbPL);
+            resources.ApplyResources(groupBox2, "groupBox2");
+            groupBox2.Name = "groupBox2";
+            groupBox2.TabStop = false;
+            // 
+            // rbEn
+            // 
+            resources.ApplyResources(rbEn, "rbEn");
+            rbEn.Name = "rbEn";
+            rbEn.UseVisualStyleBackColor = true;
+            // 
+            // rbPL
+            // 
+            resources.ApplyResources(rbPL, "rbPL");
+            rbPL.Checked = true;
+            rbPL.Name = "rbPL";
+            rbPL.TabStop = true;
+            rbPL.UseVisualStyleBackColor = true;
+            // 
+            // btnJezykZmien
+            // 
+            resources.ApplyResources(btnJezykZmien, "btnJezykZmien");
+            btnJezykZmien.Name = "btnJezykZmien";
+            btnJezykZmien.UseVisualStyleBackColor = true;
+            btnJezykZmien.Click += btnJezykZmien_Click;
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            Controls.Add(groupBox2);
+            Controls.Add(btnJezykZmien);
             Name = "Form2";
-            Text = "Form2";
             Load += Form2_Load;
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
+        private GroupBox groupBox2;
+        private RadioButton rbEn;
+        private RadioButton rbPL;
+        private Button btnJezykZmien;
     }
 }

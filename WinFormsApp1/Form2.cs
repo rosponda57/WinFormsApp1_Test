@@ -21,5 +21,18 @@ namespace WinFormsApp1
         {
             //123 456 xxxxxx
         }
+
+        private void btnJezykZmien_Click(object sender, EventArgs e)
+        {
+            if (rbEn.Checked)
+            {
+                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en");
+            }
+            if (rbPL.Checked)
+            {
+                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("pl");
+            }
+            //MessageBox.Show(Properties.Resources.TekstZmianaJezyk);
+        }
     }
 }

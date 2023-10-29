@@ -10,7 +10,7 @@ namespace WinFormsApp1.ClassTest
     {
         public override void met1()
         {
-            MessageBox.Show("clsDbMono");
+            MessageBox.Show("Properties.Resources.NapisJeden");
         }
     }
 }

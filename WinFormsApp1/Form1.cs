@@ -2,32 +2,49 @@ using Microsoft.VisualBasic;
 using System;
 using System.Configuration;
 using System.Data.Common;
+using System.Reflection;
 using System.Text.Json;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using WinFormsApp1.ClassTest;
 using WinFormsApp1.Properties;
+using System.Resources;
 
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
         private static TestAppSettings ustawienia = new();
-        private static TestAppSettings ustawieniaG = new();
-
+        public static ResourceManager rm;
         public Form1()
         {
-            InitializeComponent();
             if (Settings.Default.SettingObject != "")
             {
                 ustawienia = JsonSerializer.Deserialize<TestAppSettings>(Settings.Default.SettingObject);
+                if (ustawienia.jezyk == null)
+                {
+                    ustawienia.jezyk = "pl";
+                }
             }
-            if (Settings.Default.SettingObjectGlobal != "")
+            InitializeComponent();
+            UstawJezyk();
+        }
+
+
+        private void UstawJezyk()
+        {
+            if (ustawienia.jezyk.Equals("en", StringComparison.InvariantCultureIgnoreCase))
             {
-                ustawieniaG = JsonSerializer.Deserialize<TestAppSettings>(Settings.Default.SettingObjectGlobal);
+                rm = new ResourceManager("WinFormsApp1.resource_en", Assembly.GetExecutingAssembly());
+                rbEn.Checked = true;
+            }
+            else
+            {
+                rm = new ResourceManager("WinFormsApp1.resource_pl", Assembly.GetExecutingAssembly());
+                rbPL.Checked = true;
             }
 
-
+            btnJezykZmien.Text = rm.GetString("text_btnZmienjesyk");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,6 +94,8 @@ namespace WinFormsApp1
             ustawienia.Etykieta = "Nowe ustawienie Global";
             Settings.Default.Save();
             Settings.Default.Reload();
+            MessageBox.Show("Zapis poprawny", "Ustawienia", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Information);
+            //rm.GetString("text_btnZmienjesyk");
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -95,6 +114,7 @@ namespace WinFormsApp1
                     config.AppSettings.Settings.Remove("AAA3");
                     config.AppSettings.Settings.Add("AAA3", "globalne w oliku");
                     //ConfigurationManager.AppSettings["AAA3"] = "globalne w oliku";
+
                 }
                 config.Save();
                 ConfigurationManager.RefreshSection("appSettings");
@@ -104,5 +124,39 @@ namespace WinFormsApp1
                 MessageBox.Show("nie wolno zapisywaæ !");
             }
         }
+
+
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
+
+        private void btnJezykZmien_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show(rm.GetString("NapisJeden"), "przed ustawieniem jezyka");
+
+                if (rbEn.Checked)
+                {
+                    ustawienia.jezyk = "en";
+                }
+                if (rbPL.Checked)
+                {
+                    ustawienia.jezyk = "pl";
+                }
+                UstawJezyk();
+                MessageBox.Show(rm.GetString("TekstZmianaJezyk"), "i po....", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                _ = ex.ToString();
+                throw;
+            }
+        }
+
+
     }
 }

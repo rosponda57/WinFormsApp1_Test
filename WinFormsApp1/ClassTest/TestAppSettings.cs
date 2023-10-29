@@ -11,5 +11,6 @@ namespace WinFormsApp1.ClassTest
         public string Ustawienie1 { get; set; }
         public string Ustawienie2 { get; set; }
         public string Etykieta { get;  set; }
+        public string jezyk { get;  set; }
     }
 }

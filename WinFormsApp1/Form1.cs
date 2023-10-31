@@ -1,21 +1,19 @@
-using Microsoft.VisualBasic;
-using System;
+using Microsoft.Data.Sqlite;
 using System.Configuration;
-using System.Data.Common;
+using System.Drawing;
 using System.Reflection;
+using System.Resources;
 using System.Text.Json;
-using System.Windows.Forms;
-using System.Xml.Linq;
 using WinFormsApp1.ClassTest;
 using WinFormsApp1.Properties;
-using System.Resources;
 
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
         private static TestAppSettings ustawienia = new();
-        public static ResourceManager rm;
+        private static ResourceManager rm;
+
         public Form1()
         {
             if (Settings.Default.SettingObject != "")
@@ -33,7 +31,7 @@ namespace WinFormsApp1
 
         private void UstawJezyk()
         {
-            if (ustawienia.jezyk.Equals("en", StringComparison.InvariantCultureIgnoreCase))
+            if (ustawienia.jezyk.Equals("En", StringComparison.InvariantCultureIgnoreCase))
             {
                 rm = new ResourceManager("WinFormsApp1.resource_en", Assembly.GetExecutingAssembly());
                 rbEn.Checked = true;
@@ -45,6 +43,10 @@ namespace WinFormsApp1
             }
 
             btnJezykZmien.Text = rm.GetString("text_btnZmienjesyk");
+            this.Text = rm.GetString("text_etykieta");
+            groupBox2.Text = rm.GetString("text_groupBox2");
+            button4.Text = rm.GetString("text_button4");
+            //this.Text = "Forma 12";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -127,12 +129,6 @@ namespace WinFormsApp1
 
 
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
-        }
-
         private void btnJezykZmien_Click_1(object sender, EventArgs e)
         {
             try
@@ -157,6 +153,62 @@ namespace WinFormsApp1
             }
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form2 fr2 = new Form2();
+            fr2.ShowDialog();
+        }
 
+        private void jezykToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 fr2 = new Form2();
+            fr2.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            clsSQLLite clsSQLLite = new clsSQLLite();
+            clsSQLLite.initBaze(); //rozpoczenie
+
+
+            /*
+            //przyklad dodawanie 
+            plyty plyta = new();
+            plyta.nazwaAlbumu = "plyta1";
+            plyta.nazwaArtysty = "lol";
+            plyta.iloscPiosenek = 16;
+
+            clsSQLLite.dodajPlyte(plyta);
+
+
+            plyta.nazwaAlbumu = "plyta2";
+            plyta.nazwaArtysty = "koza";
+            plyta.iloscPiosenek = 12;
+
+            clsSQLLite.dodajPlyte(plyta);
+            */
+
+
+            //przyklad odczytclsSQLLiteanie
+            List<plyty> plytyList = clsSQLLite.listaPlyt();
+
+            foreach (var plyty in plytyList)
+            {
+                ListViewItem lvi = new ListViewItem(plyty.idZbiorPlyty.ToString());
+                lvi.SubItems.Add(plyty.nazwaAlbumu);
+                lvi.SubItems.Add(plyty.nazwaArtysty);
+                lvi.SubItems.Add(plyty.iloscPiosenek.ToString());
+
+                //listViewControl.Items.Add(lvi);
+
+            }
+
+
+        }
     }
 }

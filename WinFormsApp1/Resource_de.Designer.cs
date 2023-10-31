@@ -22,14 +22,14 @@ namespace WinFormsApp1 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class resource_pl {
+    internal class Resource_de {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal resource_pl() {
+        internal Resource_de() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace WinFormsApp1 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinFormsApp1.resource_pl", typeof(resource_pl).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinFormsApp1.Resource_de", typeof(Resource_de).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace WinFormsApp1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cześć wszystkim.
+        ///   Looks up a localized string similar to GutenTag.
         /// </summary>
         internal static string NapisJeden {
             get {
@@ -70,7 +70,7 @@ namespace WinFormsApp1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ustawiono język.
+        ///   Looks up a localized string similar to The language was set .
         /// </summary>
         internal static string TekstZmianaJezyk {
             get {
@@ -79,7 +79,7 @@ namespace WinFormsApp1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zmien język.
+        ///   Looks up a localized string similar to Change language.
         /// </summary>
         internal static string text_btnZmienjesyk {
             get {
@@ -88,16 +88,7 @@ namespace WinFormsApp1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zapisz.
-        /// </summary>
-        internal static string text_button4 {
-            get {
-                return ResourceManager.GetString("text_button4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to koza.
+        ///   Looks up a localized string similar to Form1  engl.
         /// </summary>
         internal static string text_etykieta {
             get {
@@ -106,7 +97,7 @@ namespace WinFormsApp1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grupa jezykowa.
+        ///   Looks up a localized string similar to Group Language.
         /// </summary>
         internal static string text_groupBox2 {
             get {

@@ -28,60 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            groupBox2 = new GroupBox();
-            rbEn = new RadioButton();
-            rbPL = new RadioButton();
-            btnJezykZmien = new Button();
-            groupBox2.SuspendLayout();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            button1 = new Button();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox2
+            // tabControl1
             // 
-            groupBox2.Controls.Add(rbEn);
-            groupBox2.Controls.Add(rbPL);
-            resources.ApplyResources(groupBox2, "groupBox2");
-            groupBox2.Name = "groupBox2";
-            groupBox2.TabStop = false;
+            tabControl1.Alignment = TabAlignment.Left;
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Appearance = TabAppearance.Buttons;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(-3, -1);
+            tabControl1.Multiline = true;
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(870, 379);
+            tabControl1.TabIndex = 0;
             // 
-            // rbEn
+            // tabPage1
             // 
-            resources.ApplyResources(rbEn, "rbEn");
-            rbEn.Name = "rbEn";
-            rbEn.UseVisualStyleBackColor = true;
+            tabPage1.BorderStyle = BorderStyle.FixedSingle;
+            tabPage1.Controls.Add(button1);
+            tabPage1.Location = new Point(157, 4);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(709, 371);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
             // 
-            // rbPL
+            // tabPage2
             // 
-            resources.ApplyResources(rbPL, "rbPL");
-            rbPL.Checked = true;
-            rbPL.Name = "rbPL";
-            rbPL.TabStop = true;
-            rbPL.UseVisualStyleBackColor = true;
+            tabPage2.Location = new Point(157, 4);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(711, 371);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnJezykZmien
+            // button1
             // 
-            resources.ApplyResources(btnJezykZmien, "btnJezykZmien");
-            btnJezykZmien.Name = "btnJezykZmien";
-            btnJezykZmien.UseVisualStyleBackColor = true;
-            btnJezykZmien.Click += btnJezykZmien_Click;
+            button1.Location = new Point(6, 24);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
-            resources.ApplyResources(this, "$this");
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(groupBox2);
-            Controls.Add(btnJezykZmien);
+            ClientSize = new Size(866, 375);
+            Controls.Add(tabControl1);
             Name = "Form2";
-            Load += Form2_Load;
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            Text = "Form2";
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private GroupBox groupBox2;
-        private RadioButton rbEn;
-        private RadioButton rbPL;
-        private Button btnJezykZmien;
+
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private Button button1;
     }
 }

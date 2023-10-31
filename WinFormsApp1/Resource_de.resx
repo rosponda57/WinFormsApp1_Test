@@ -117,73 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>forma wielojezyczna</value>
+  <data name="NapisJeden" xml:space="preserve">
+    <value>GutenTag</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form2</value>
+  <data name="TekstZmianaJezyk" xml:space="preserve">
+    <value>The language was set </value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="text_btnZmienjesyk" xml:space="preserve">
+    <value>Change language</value>
   </data>
-  <data name="&gt;&gt;btnJezykZmien.Name" xml:space="preserve">
-    <value>btnJezykZmien</value>
+  <data name="text_etykieta" xml:space="preserve">
+    <value>Form1  engl</value>
   </data>
-  <data name="&gt;&gt;btnJezykZmien.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnJezykZmien.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnJezykZmien.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbEn.Name" xml:space="preserve">
-    <value>rbEn</value>
-  </data>
-  <data name="&gt;&gt;rbEn.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;rbEn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbEn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbPL.Name" xml:space="preserve">
-    <value>rbPL</value>
-  </data>
-  <data name="&gt;&gt;rbPL.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;rbPL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbPL.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnJezykZmien.Text" xml:space="preserve">
-    <value>zmienJezyk</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>jezyk</value>
-  </data>
-  <data name="rbEn.Text" xml:space="preserve">
-    <value>angielski</value>
-  </data>
-  <data name="rbPL.Text" xml:space="preserve">
-    <value>polski</value>
+  <data name="text_groupBox2" xml:space="preserve">
+    <value>Group Language</value>
   </data>
 </root>

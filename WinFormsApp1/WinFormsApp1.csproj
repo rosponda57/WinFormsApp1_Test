@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.13" />
     <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
   </ItemGroup>
 
@@ -17,6 +18,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Resource_de.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource_de.resx</DependentUpon>
     </Compile>
     <Compile Update="Resource_en.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -31,6 +37,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resource_de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="resource_en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource_en.Designer.cs</LastGenOutput>

@@ -86,5 +86,32 @@ namespace WinFormsApp1 {
                 return ResourceManager.GetString("text_btnZmienjesyk", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string text_button4 {
+            get {
+                return ResourceManager.GetString("text_button4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form1  engl.
+        /// </summary>
+        internal static string text_etykieta {
+            get {
+                return ResourceManager.GetString("text_etykieta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group Language.
+        /// </summary>
+        internal static string text_groupBox2 {
+            get {
+                return ResourceManager.GetString("text_groupBox2", resourceCulture);
+            }
+        }
     }
 }

@@ -17,22 +17,9 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void tabPage1_Click(object sender, EventArgs e)
         {
-            //123 456 xxxxxx
-        }
 
-        private void btnJezykZmien_Click(object sender, EventArgs e)
-        {
-            if (rbEn.Checked)
-            {
-                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en");
-            }
-            if (rbPL.Checked)
-            {
-                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("pl");
-            }
-            //MessageBox.Show(Properties.Resources.TekstZmianaJezyk);
         }
     }
 }

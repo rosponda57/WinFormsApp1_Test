@@ -40,6 +40,8 @@
             btnJezykZmien = new Button();
             rbEn = new RadioButton();
             rbPL = new RadioButton();
+            button6 = new Button();
+            button7 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -49,7 +51,7 @@
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             button1.Location = new Point(45, 159);
             button1.Name = "button1";
-            button1.Size = new Size(192, 43);
+            button1.Size = new Size(691, 104);
             button1.TabIndex = 0;
             button1.Text = "claSaPoli";
             button1.UseVisualStyleBackColor = true;
@@ -91,7 +93,7 @@
             // button2
             // 
             button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.Location = new Point(174, 256);
+            button2.Location = new Point(673, 317);
             button2.Name = "button2";
             button2.Size = new Size(176, 29);
             button2.TabIndex = 2;
@@ -102,7 +104,7 @@
             // button3
             // 
             button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button3.Location = new Point(174, 339);
+            button3.Location = new Point(673, 400);
             button3.Name = "button3";
             button3.Size = new Size(176, 29);
             button3.TabIndex = 3;
@@ -113,7 +115,7 @@
             // button4
             // 
             button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button4.Location = new Point(174, 291);
+            button4.Location = new Point(673, 352);
             button4.Name = "button4";
             button4.Size = new Size(176, 29);
             button4.TabIndex = 4;
@@ -124,7 +126,7 @@
             // button5
             // 
             button5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button5.Location = new Point(356, 290);
+            button5.Location = new Point(855, 351);
             button5.Name = "button5";
             button5.Size = new Size(134, 29);
             button5.TabIndex = 5;
@@ -176,11 +178,33 @@
             rbPL.Text = "polski";
             rbPL.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            button6.Location = new Point(56, 286);
+            button6.Name = "button6";
+            button6.Size = new Size(121, 29);
+            button6.TabIndex = 7;
+            button6.Text = "button6";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(56, 352);
+            button7.Name = "button7";
+            button7.Size = new Size(121, 29);
+            button7.TabIndex = 8;
+            button7.Text = "button7";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(502, 380);
+            ClientSize = new Size(1001, 441);
+            Controls.Add(button7);
+            Controls.Add(button6);
             Controls.Add(groupBox2);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -211,5 +235,7 @@
         private RadioButton rbEn;
         private RadioButton rbPL;
         private Button btnJezykZmien;
+        private Button button6;
+        private Button button7;
     }
 }

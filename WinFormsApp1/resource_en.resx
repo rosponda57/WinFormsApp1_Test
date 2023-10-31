@@ -126,4 +126,13 @@
   <data name="text_btnZmienjesyk" xml:space="preserve">
     <value>Change language</value>
   </data>
+  <data name="text_button4" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="text_etykieta" xml:space="preserve">
+    <value>Form1  engl</value>
+  </data>
+  <data name="text_groupBox2" xml:space="preserve">
+    <value>Group Language</value>
+  </data>
 </root>

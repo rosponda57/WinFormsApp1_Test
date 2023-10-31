@@ -212,7 +212,23 @@ namespace WinFormsApp1
 
             }
 
+            //if (listViewControl.Items.Count > 0)
+            //{
+            //    listViewControl.Items[0].Focused = true;
+            //    listViewControl.Items[0].Selected = true;
+            //    listViewControl.Items[0].EnsureVisible();
+            //}
 
+        }
+
+
+        private void listViewControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            foreach (var item in listViewControl.SelectedItems)
+            {
+                MessageBox.Show(item.ToString());
+            }
         }
     }
 }

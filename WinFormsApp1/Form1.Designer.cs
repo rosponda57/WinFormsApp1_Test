@@ -205,13 +205,17 @@
             // 
             // listViewControl
             // 
+            listViewControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listViewControl.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            listViewControl.FullRowSelect = true;
+            listViewControl.GridLines = true;
             listViewControl.Location = new Point(209, 286);
             listViewControl.Name = "listViewControl";
             listViewControl.Size = new Size(386, 123);
             listViewControl.TabIndex = 9;
             listViewControl.UseCompatibleStateImageBehavior = false;
             listViewControl.View = View.Details;
+            listViewControl.SelectedIndexChanged += listViewControl_SelectedIndexChanged;
             // 
             // columnHeader1
             // 

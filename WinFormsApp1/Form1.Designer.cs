@@ -42,6 +42,11 @@
             rbPL = new RadioButton();
             button6 = new Button();
             button7 = new Button();
+            listViewControl = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -198,11 +203,38 @@
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
+            // listViewControl
+            // 
+            listViewControl.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            listViewControl.Location = new Point(209, 286);
+            listViewControl.Name = "listViewControl";
+            listViewControl.Size = new Size(386, 123);
+            listViewControl.TabIndex = 9;
+            listViewControl.UseCompatibleStateImageBehavior = false;
+            listViewControl.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "id";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "nazwa1";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "nazwa2";
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "ilosc";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1001, 441);
+            Controls.Add(listViewControl);
             Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(groupBox2);
@@ -237,5 +269,10 @@
         private Button btnJezykZmien;
         private Button button6;
         private Button button7;
+        private ListView listViewControl;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
     }
 }

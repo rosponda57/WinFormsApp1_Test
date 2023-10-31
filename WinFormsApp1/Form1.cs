@@ -182,17 +182,21 @@ namespace WinFormsApp1
             plyta.nazwaAlbumu = "plyta1";
             plyta.nazwaArtysty = "lol";
             plyta.iloscPiosenek = 16;
-
             clsSQLLite.dodajPlyte(plyta);
-
 
             plyta.nazwaAlbumu = "plyta2";
             plyta.nazwaArtysty = "koza";
             plyta.iloscPiosenek = 12;
+            clsSQLLite.dodajPlyte(plyta);
 
+            plyta.nazwaAlbumu = "plyta4";
+            plyta.nazwaArtysty = "yjykuyk";
+            plyta.iloscPiosenek = 5;
             clsSQLLite.dodajPlyte(plyta);
             */
 
+
+            listViewControl.Items.Clear();
 
             //przyklad odczytclsSQLLiteanie
             List<plyty> plytyList = clsSQLLite.listaPlyt();
@@ -204,7 +208,7 @@ namespace WinFormsApp1
                 lvi.SubItems.Add(plyty.nazwaArtysty);
                 lvi.SubItems.Add(plyty.iloscPiosenek.ToString());
 
-                //listViewControl.Items.Add(lvi);
+                listViewControl.Items.Add(lvi);
 
             }
 
